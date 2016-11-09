@@ -5,9 +5,7 @@
  *
  * License: MIT
  */
-angular.module('angular-dialgauge', [
-    'ngSanitize'
-])
+angular.module('angular-dialgauge')
     .directive('ngDialGauge', ["$window", "$sce", "$interval", function ($window, $sce, $interval) {
         return {
             restrict: 'E',                  // Use as element
@@ -211,11 +209,7 @@ angular.module('angular-dialgauge', [
                         return;
                     }
 
-//                    console.log("Centre", center, cfg.dialWidth);
                     var radius = center - cfg.dialWidth;
-//                    console.log("Radius", radius);
-
-//                    console.log("This is", this);
 
                     // Sanitise the rotation
                     // Rotation should start at the top, so we need to subtract 90 degrees
@@ -470,7 +464,6 @@ angular.module('angular-dialgauge', [
                     }
 
                     for (var key in defaults) {
-//                        console.log("Checking ", key);
 
                         if (cfgObject[key] !== undefined) {
                             cfg[key] = cfgObject[key];
